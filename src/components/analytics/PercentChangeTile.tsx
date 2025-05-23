@@ -20,7 +20,7 @@ export default function PercentChangeTile({
 }: PercentChangeTileProps) {
   const color = useColorModeValue("blackAlpha.500", "whiteAlpha.500")
   const labelColor = useColorModeValue("blackAlpha.400", "whiteAlpha.500")
-  const borderColorPos = useColorModeValue("green.300", "green.700")
+  const borderColorPos = useColorModeValue("#006ad0", "green.700")
   const borderColorNeg = useColorModeValue("red.100", "red.800")
   const percentchange = Math.round(((currentAmount - previousAmount) / previousAmount) * 100)
   const percentchangetype = percentchange >= 0 ? "pos" : "neg"

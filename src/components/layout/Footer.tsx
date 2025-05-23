@@ -4,7 +4,7 @@ import {Link} from "@chakra-ui/next-js"
 const Footer = () => {
   const {colorMode, toggleColorMode} = useColorMode()
   const bg = useColorModeValue("footerBg.400", "footerBg.600")
-  const color = useColorModeValue("blackAlpha.400", "whiteAlpha.400")
+  const color = useColorModeValue("white", "whiteAlpha.400")
 
   return (
     <Container
@@ -15,7 +15,7 @@ const Footer = () => {
       flexFlow={"row nowrap"}
       justifyContent={"space-between"}
       alignItems={"center"}
-      bg={useColorModeValue("white", "blackAlpha.600")}
+      bg={useColorModeValue("#006ad0", "blackAlpha.600")}
       color={color}
       px={8}
     >

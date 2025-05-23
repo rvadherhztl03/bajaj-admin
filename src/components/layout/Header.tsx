@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Container
       as="header"
-      backgroundColor={useColorModeValue("white", "gray.800")}
+      backgroundColor={useColorModeValue("#1e2b56", "white.300")}
       boxShadow="sm"
       maxW="full"
       position="sticky"

@@ -84,11 +84,11 @@ export const ThemeDrawer = () => {
               <FormLabel htmlFor="toggleColorMode">Toggle {colorMode} mode</FormLabel>
             </FormControl>
           </ProtectedContent>
-          <Divider />
+          {/* <Divider />
           <ColorPicker colors={selectedColors} onChange={handleColorChange} />
-          <FontPicker fonts={selectedFonts} onChange={handleFontChange} />
+          <FontPicker fonts={selectedFonts} onChange={handleFontChange} /> */}
         </DrawerBody>
-        <DrawerFooter gap={4} flexFlow="row wrap" justifyContent="center" alignItems={"center"}>
+        {/* <DrawerFooter gap={4} flexFlow="row wrap" justifyContent="center" alignItems={"center"}>
           <Button variant="solid" colorScheme="primary" onClick={handleApplyTheme} flexGrow={1}>
             Apply Theming
           </Button>
@@ -96,7 +96,7 @@ export const ThemeDrawer = () => {
           <Button onClick={handleResetTheme} variant="outline" colorScheme="danger" inset="unset">
             Reset
           </Button>
-        </DrawerFooter>
+        </DrawerFooter> */}
       </DrawerContent>
     </>
   )

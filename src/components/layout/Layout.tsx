@@ -6,6 +6,12 @@ import Footer from "./Footer"
 import Header from "./Header"
 import {useAuth} from "hooks/useAuth"
 import SideBarMenu from "../navigation/SideBarMenu"
+import {Poppins} from "@next/font/google"
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "600", "700", "800", "900"]
+})
 
 const Layout = (props) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -21,7 +27,7 @@ const Layout = (props) => {
     )
   }
   return (
-    <>
+    <div className={poppins.className}>
       <Header />
       <Grid as="main" gridTemplateColumns={["auto", "75px auto", "75px auto", "250px auto"]} flexGrow="1">
         <Hide below="sm">
@@ -34,7 +40,7 @@ const Layout = (props) => {
         </Flex>
       </Grid>
       <Footer />
-    </>
+    </div>
   )
 }
 

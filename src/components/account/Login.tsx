@@ -10,6 +10,7 @@ import {
   Heading,
   Hide,
   HStack,
+  Icon,
   Input,
   useColorModeValue,
   VStack
@@ -19,6 +20,7 @@ import {ChangeEvent, FormEvent, FunctionComponent, useCallback, useMemo, useStat
 import {useAuth} from "hooks/useAuth"
 import schraTheme from "theme/theme"
 import {HeaderLogo} from "../branding/HeaderLogo"
+import {TbEye, TbEyeOff} from "react-icons/tb"
 
 interface OcLoginFormProps {
   title?: string
@@ -27,6 +29,7 @@ interface OcLoginFormProps {
 
 const OcLoginForm: FunctionComponent<OcLoginFormProps> = ({title = "Sign into your account", onLoggedIn}) => {
   const {Login, isAuthenticated} = useAuth()
+  const [isHidden, setIsHidden] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [formValues, setFormValues] = useState({
     identifier: "",
@@ -69,11 +72,12 @@ const OcLoginForm: FunctionComponent<OcLoginFormProps> = ({title = "Sign into yo
       <Grid gridTemplateColumns={["auto", "auto 50vw"]} h={"100%"} w={"100%"} overflowX={"hidden"}>
         <Hide below="lg">
           <Box
-            bgImg={`url(${backgroundImage})`}
+            bgImg={`url(${"https://cdn.bajajauto.com/-/media/assets/bajajauto/bikes/pulsar-k-2024/hero-banner/web-banner.webp"})`}
             bgSize={"cover"}
             bgRepeat={"no-repeat"}
             bgColor={"blackAlpha.700"}
             bgBlendMode={"overlay"}
+            bgPosition={"center"}
           />
         </Hide>
         <Flex
@@ -120,6 +124,19 @@ const OcLoginForm: FunctionComponent<OcLoginFormProps> = ({title = "Sign into yo
                     value={formValues.password}
                     onChange={handleInputChange("password")}
                     required
+                  />
+                  <Icon
+                    as={!isHidden ? TbEyeOff : TbEye}
+                    strokeWidth="1.25"
+                    fontSize="1.5em"
+                    position={"absolute"}
+                    top={"49%"}
+                    right={"2%"}
+                    onClick={() => {
+                      setIsHidden(!isHidden)
+                    }}
+                    cursor={"pointer"}
+                    aria-label={!isHidden ? "shop password" : "hide password"}
                   />
                 </Box>
                 <Box>

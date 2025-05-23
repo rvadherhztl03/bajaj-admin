@@ -26,7 +26,7 @@ const SidebarMenu = ({isInDrawer, onLinkClick}: SidebarMenuProps) => {
   const router = useRouter()
   const {isSupplier} = useAuth()
   const btnActiveColor = useColorModeValue("inherit", "whiteAlpha.800")
-  const btnActiveBgColor = useColorModeValue("white", "whiteAlpha.200")
+  const btnActiveBgColor = useColorModeValue("", "whiteAlpha.200")
 
   const data = [
     {label: "Dashboard", path: "/dashboard", icon: TbLayout, permisshies: appPermissions.DashboardViewer},
@@ -96,6 +96,7 @@ const SidebarMenu = ({isInDrawer, onLinkClick}: SidebarMenuProps) => {
           boxShadow: "sm",
           borderColor: "chakra-border-color"
         }}
+        color={"white"}
         _hover={{textDecoration: "none", backgroundColor: btnActiveBgColor, boxShadow: "md"}}
         border={".5px solid transparent"}
         textDecoration={"none"}
@@ -113,7 +114,7 @@ const SidebarMenu = ({isInDrawer, onLinkClick}: SidebarMenuProps) => {
     </ProtectedContent>
   ))
 
-  const drawerBackground = useColorModeValue("gray.50", "gray.800")
+  const drawerBackground = useColorModeValue("#006ad0", "gray.800")
 
   return (
     <Flex

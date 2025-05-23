@@ -24,6 +24,7 @@ import Cookies from "universal-cookie"
 import ProtectedContent from "../auth/ProtectedContent"
 import {ThemeDrawer} from "./ThemeDrawer"
 import {ItemContent} from "./ItemContent"
+import {useRouter} from "next/router"
 
 const MobileNavigation = () => {
   const {Logout} = useAuth()
@@ -35,6 +36,7 @@ const MobileNavigation = () => {
   const color = useColorModeValue("textColor.900", "textColor.100")
   const borderColor = useColorModeValue("white", "gray.700")
   const [selectedOption, setSelectedOption] = useState<String>()
+  const router = useRouter()
   // This function is triggered when the select changes
   const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value
@@ -52,10 +54,15 @@ const MobileNavigation = () => {
   if (cookies.get("currenttheme") !== null) {
     currenttheme = cookies.get("currenttheme")
   }
+
+  const redirectToProfile = () => {
+    router?.push("/userprofile")
+  }
+
   return (
     <HStack alignItems="center" gap={3}>
       <Menu>
-        <MenuButton pos={"relative"} mr={3}>
+        {/* <MenuButton pos={"relative"} mr={3}>
           <Icon as={TbInbox} strokeWidth="1.5" fontSize="2xl" />
           <Badge
             display={"flex"}
@@ -76,7 +83,7 @@ const MobileNavigation = () => {
           >
             3
           </Badge>
-        </MenuButton>
+        </MenuButton> */}
         <MenuList borderRadius="lg" p={3} display="flex" flexDirection="column" gap={1}>
           <MenuItem borderRadius="lg">
             <ItemContent
@@ -119,21 +126,24 @@ const MobileNavigation = () => {
               border=".5px solid #ccc"
             />
             <Show above="md">
-              <Text whiteSpace="nowrap">{usersToken}</Text>
-              <ChevronDownIcon />
+              <Text whiteSpace="nowrap" color={"white"}>
+                {usersToken}
+              </Text>
+              <ChevronDownIcon color={"white"} />
             </Show>
           </HStack>
         </MenuButton>
         <MenuList>
           <ProtectedContent hasAccess={appPermissions.ProfileManager}>
             <>
-              <MenuItem icon={<Icon as={TbUserCircle} strokeWidth="1.25" fontSize="1.5em" />} lineHeight="0">
+              <MenuItem
+                onClick={redirectToProfile}
+                icon={<Icon as={TbUserCircle} strokeWidth="1.25" fontSize="1.5em" />}
+                lineHeight="0"
+              >
                 Manage Profile
               </MenuItem>
 
-              <MenuItem icon={<Icon as={TbInbox} strokeWidth="1.25" fontSize="1.5em" />} lineHeight="0">
-                Notifications
-              </MenuItem>
               <MenuItem
                 ref={btnRef}
                 onClick={onOpen}

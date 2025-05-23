@@ -154,7 +154,7 @@ const Dashboard = () => {
     <Card
       as={Link}
       variant={"levitating"}
-      border={`.5px solid ${schraTheme.colors.blackAlpha[300]}`}
+      border={`.5px solid ${"#006ad0"}`}
       href={"/" + item.label}
       key={item.label}
       pos={"relative"}

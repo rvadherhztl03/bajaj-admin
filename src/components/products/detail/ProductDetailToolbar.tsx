@@ -65,8 +65,8 @@ export default function ProductDetailToolbar({
                 </MenuButton>
                 <MenuList>
                   <ViewProduct />
-                  <ExportToCsv variant="menuitem" />
-                  <LanguageSelector />
+                  {/* <ExportToCsv variant="menuitem" />
+                  <LanguageSelector /> */}
                   <ConfirmDelete deleteText="Delete Product" loading={deleteLoading} onDelete={onDelete} />
                 </MenuList>
               </Menu>

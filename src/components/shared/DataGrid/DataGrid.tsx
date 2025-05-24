@@ -2,6 +2,7 @@ import {Box, Center, GridItem, Heading, ResponsiveObject, SimpleGrid, Spinner, T
 import {ReactElement} from "react"
 import {IDefaultResource, ListParams, ListViewTemplate} from "../ListView/ListView"
 import DefaultDataGridItemCard from "./DefaultDataGridItemCard"
+import Loader from "@/helpers/Loader"
 
 export interface IDataGrid<T extends IDefaultResource> {
   data: T[]
@@ -83,7 +84,7 @@ const DataGrid = <T extends IDefaultResource>({
           bgColor="whiteAlpha.700"
         >
           <Center h="100%" color="teal">
-            <Spinner size="xl" />
+            <Loader />
           </Center>
         </Box>
       )}

@@ -7,6 +7,7 @@ import Header from "./Header"
 import {useAuth} from "hooks/useAuth"
 import SideBarMenu from "../navigation/SideBarMenu"
 import {Poppins} from "@next/font/google"
+import Head from "next/head"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,20 +28,26 @@ const Layout = (props) => {
     )
   }
   return (
-    <div className={poppins.className}>
-      <Header />
-      <Grid as="main" gridTemplateColumns={["auto", "75px auto", "75px auto", "250px auto"]} flexGrow="1">
-        <Hide below="sm">
-          <SideBarMenu />
-        </Hide>
-        <Flex flexFlow={"column nowrap"} overflowX="hidden">
-          <ContentHeader />
-          {props.children}
-          <ContentFooter />
-        </Flex>
-      </Grid>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>{"BAJAJ Auto"}</title>
+        <link rel="icon" href="https://cdn.bajajauto.com/-/media/assets/bajajauto/global/bajaj-logo2.png" />
+      </Head>
+      <div className={poppins.className}>
+        <Header />
+        <Grid as="main" gridTemplateColumns={["auto", "75px auto", "75px auto", "250px auto"]} flexGrow="1">
+          <Hide below="sm">
+            <SideBarMenu />
+          </Hide>
+          <Flex flexFlow={"column nowrap"} overflowX="hidden">
+            <ContentHeader />
+            {props.children}
+            <ContentFooter />
+          </Flex>
+        </Grid>
+        <Footer />
+      </div>
+    </>
   )
 }
 

@@ -105,15 +105,17 @@ const Dashboard = () => {
     {
       label: "total orders",
       labelSingular: "order",
+      href: "/orders",
       count: data.ordersList?.Meta?.TotalCount,
       lastUpdated: dateHelper.formatDate(
         data.ordersList?.Items?.length ? data.ordersList.Items[0].LastUpdated : new Date().toISOString()
       )
     },
-    {label: "total products", labelSingular: "product", count: data.totalProductsCount},
+    {label: "total products", labelSingular: "product", count: data.totalProductsCount, href: "/products"},
     {
       label: "total promotions",
       labelSingular: "promotion",
+      href: "/promotions",
       count: data.totalPromosCount
     }
   ]
@@ -155,7 +157,7 @@ const Dashboard = () => {
       as={Link}
       variant={"levitating"}
       border={`.5px solid ${"#006ad0"}`}
-      href={"/" + item.label}
+      href={"/" + item.href}
       key={item.label}
       pos={"relative"}
     >

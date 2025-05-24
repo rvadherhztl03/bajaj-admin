@@ -117,7 +117,7 @@ const OcLoginForm: FunctionComponent<OcLoginFormProps> = ({title = "Sign into yo
                   <FormLabel htmlFor="password">Password</FormLabel>
                   <Input
                     variant="filled"
-                    type="password"
+                    type={!isHidden ? "password" : "text"}
                     id="password"
                     name="password"
                     placeholder="Enter password"

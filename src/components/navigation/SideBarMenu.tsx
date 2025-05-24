@@ -36,30 +36,20 @@ const SidebarMenu = ({isInDrawer, onLinkClick}: SidebarMenuProps) => {
       icon: TbShoppingCartPlus,
       permisshies: [appPermissions.ProductViewer, appPermissions.ProductManager]
     },
-    {
-      label: "Promotions",
-      path: "/promotions",
-      icon: TbShoppingCartDiscount,
-      permisshies: [appPermissions.PromotionViewer, appPermissions.PromotionManager]
-    },
+
     {
       label: "Orders",
       path: "/orders",
       icon: TbReceipt2,
       permisshies: [appPermissions.OrderViewer, appPermissions.OrderManager]
     },
-    {
-      label: "Returns",
-      path: "/returns",
-      icon: TbTruckReturn,
-      permisshies: [appPermissions.OrderViewer, appPermissions.OrderManager]
-    },
-    {
-      label: "Buyers",
-      path: "/buyers",
-      icon: TbUserCheck,
-      permisshies: [appPermissions.BuyerViewer, appPermissions.BuyerManager]
-    },
+    // {
+    //   label: "Returns",
+    //   path: "/returns",
+    //   icon: TbTruckReturn,
+    //   permisshies: [appPermissions.OrderViewer, appPermissions.OrderManager]
+    // },
+
     isSupplier
       ? {
           label: "My Supplier",
@@ -73,6 +63,18 @@ const SidebarMenu = ({isInDrawer, onLinkClick}: SidebarMenuProps) => {
           icon: TbBuildingWarehouse,
           permisshies: [appPermissions.SupplierViewer, appPermissions.SupplierManager]
         },
+    {
+      label: "Promotions",
+      path: "/promotions",
+      icon: TbShoppingCartDiscount,
+      permisshies: [appPermissions.PromotionViewer, appPermissions.PromotionManager]
+    },
+    {
+      label: "Buyers",
+      path: "/buyers",
+      icon: TbUserCheck,
+      permisshies: [appPermissions.BuyerViewer, appPermissions.BuyerManager]
+    },
     {
       label: "settings",
       path: "/settings",

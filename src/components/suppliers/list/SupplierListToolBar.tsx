@@ -21,7 +21,7 @@ const SupplierListToolbar: FC<SupplierListToolbarProps> = ({
 }) => {
   return (
     <Stack direction="row" mb={5} w="full" wrap="wrap" gap={2}>
-      <DebouncedSearchInput label="Search suppliers" value={queryParams["Search"]} onSearch={updateQuery("s", true)} />
+      <DebouncedSearchInput label="Search dealers" value={queryParams["Search"]} onSearch={updateQuery("s", true)} />
       <SupplierStatusFilter value={filterParams["Active"]} onChange={updateQuery("active", true)} />
       <ExportToCsv />
       <Stack direction="row" alignItems="center" style={{marginLeft: "auto"}}>
@@ -31,7 +31,7 @@ const SupplierListToolbar: FC<SupplierListToolbarProps> = ({
         <ProtectedContent hasAccess={appPermissions.SupplierManager}>
           <Link passHref href="/suppliers/new">
             <Button variant="solid" colorScheme="primary" as="a">
-              Create Supplier
+              Create Dealer
             </Button>
           </Link>
         </ProtectedContent>

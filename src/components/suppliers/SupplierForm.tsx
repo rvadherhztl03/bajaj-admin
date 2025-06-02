@@ -77,7 +77,7 @@ export function SupplierForm({supplier, securityProfileAssignments = [], refresh
     })
     await Promise.all(assignmentRequests)
     successToast({
-      description: "Supplier created successfully."
+      description: "Dealer created successfully."
     })
     router.replace(`/suppliers/${createdSupplier.ID}`)
   }
@@ -93,7 +93,7 @@ export function SupplierForm({supplier, securityProfileAssignments = [], refresh
     }
 
     successToast({
-      description: "Supplier updated successfully."
+      description: "Dealer updated successfully."
     })
     refresh()
   }
@@ -158,7 +158,7 @@ export function SupplierForm({supplier, securityProfileAssignments = [], refresh
           />
           <InputControl
             name="Supplier.Name"
-            label="Supplier Name"
+            label="Dealer Name"
             control={control}
             validationSchema={validationSchema}
             isDisabled={!isSupplierManager}

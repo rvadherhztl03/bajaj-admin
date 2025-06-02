@@ -91,7 +91,7 @@ const SupplierAddressList = () => {
   )
 
   const resolveSupplierAddressDetailHref = (address: ISupplierAddress) => {
-    return `/suppliers/${supplierid}/addresses/${address.ID}`
+    return `/dealers/${supplierid}/addresses/${address.ID}`
   }
 
   return (

@@ -32,7 +32,7 @@ const SupplierFilterMap = {
 }
 
 const IdColumn: DataTableColumn<ISupplierListItem> = {
-  header: "Supplier ID",
+  header: "Dealer ID",
   accessor: "ID",
   cell: ({row, value}) => (
     <Text noOfLines={2} title={value}>
@@ -81,7 +81,7 @@ const SupplierUserGroupColumn: DataTableColumn<ISupplierListItem> = {
   header: "USER GROUPS",
   skipHref: true,
   cell: ({row}) => (
-    <Link passHref href={`/suppliers/${row.original.ID}/usergroups`}>
+    <Link passHref href={`/dealers/${row.original.ID}/usergroups`}>
       <Button as="a" variant="outline">
         User Groups ({row.original.userGroupsCount})
       </Button>
@@ -93,7 +93,7 @@ const SupplierAddressColumn: DataTableColumn<ISupplierListItem> = {
   header: "ADDRESSES",
   skipHref: true,
   cell: ({row}) => (
-    <Link passHref href={`/suppliers/${row.original.ID}/addresses`}>
+    <Link passHref href={`/dealers/${row.original.ID}/addresses`}>
       <Button as="a" variant="outline">
         Addresses ({row.original.addressCount})
       </Button>
@@ -170,7 +170,7 @@ const SupplierList: FC = () => {
   )
 
   const resolveSupplierDetailHref = (supplier: ISupplier) => {
-    return `/suppliers/${supplier.ID}`
+    return `/dealers/${supplier.ID}`
   }
 
   return (

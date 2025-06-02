@@ -23,7 +23,7 @@ const SupplierAddressListToolbar: FC<SupplierAddressListToolbarProps> = ({
       <Stack direction="row" mb={5}>
         <Stack direction={["column", "column", "column", "row"]}>
           <DebouncedSearchInput
-            label="Search supplier addresses"
+            label="Search dealer addresses"
             value={queryParams["Search"]}
             onSearch={updateQuery("s", true)}
           />
@@ -40,7 +40,7 @@ const SupplierAddressListToolbar: FC<SupplierAddressListToolbarProps> = ({
           </Stack>
           <ProtectedContent hasAccess={appPermissions.SupplierAddressManager}>
             <Box order={[0, 0, 0, 1]} mt={0}>
-              <Link passHref href={`/suppliers/${supplierid}/addresses/new`}>
+              <Link passHref href={`/dealers/${supplierid}/addresses/new`}>
                 <Button variant="solid" colorScheme="primary" as="a" mb={3}>
                   Create Supplier Address
                 </Button>

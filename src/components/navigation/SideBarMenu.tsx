@@ -58,8 +58,8 @@ const SidebarMenu = ({isInDrawer, onLinkClick}: SidebarMenuProps) => {
           permisshies: [appPermissions.SupplierViewer, appPermissions.SupplierManager]
         }
       : {
-          label: "Suppliers",
-          path: "/suppliers",
+          label: "Dealers",
+          path: "/dealers",
           icon: TbBuildingWarehouse,
           permisshies: [appPermissions.SupplierViewer, appPermissions.SupplierManager]
         },
